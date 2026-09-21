@@ -1,0 +1,75 @@
+============================================================
+TNEA RANK CLEANUP REVIEW
+============================================================
+
+year: 2021
+issue: branch_name_variation
+analysis: Standardized branch-name formatting and capitalization variants
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2021
+issue: district_variation
+analysis: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2022
+issue: branch_name_variation
+analysis: Standardized branch-name formatting and capitalization variants
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2022
+issue: district_variation
+analysis: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2023
+issue: branch_name_variation
+analysis: Standardized branch-name formatting and capitalization variants
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2023
+issue: district_variation
+analysis: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2024
+issue: branch_name_variation
+analysis: Standardized branch-name formatting and capitalization variants
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2024
+issue: district_variation
+analysis: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2025
+issue: branch_name_variation
+analysis: Standardized branch-name formatting and capitalization variants
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+year: 2025
+issue: district_variation
+analysis: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI
+action: Standardized exact naming variants to canonical value
+reason: Verified from actual data across multiple years
+confidence: HIGH
+
+============================================================

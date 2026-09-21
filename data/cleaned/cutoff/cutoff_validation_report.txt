@@ -1,0 +1,242 @@
+================================================================================
+TNEA CUTOFF DATA - VALIDATION REPORT
+================================================================================
+Generated: 2026-08-17 14:19:03
+
+
+YEAR SUMMARY
+--------------------------------------------------------------------------------
+Year     Raw Rows     Cleaned Rows    Colleges     Branches  
+--------------------------------------------------------------------------------
+2021     2830         2830            440          98        
+2022     3089         3089            446          100       
+2023     3324         3324            440          100       
+2024     3474         3474            434          106       
+2025     3457         3457            423          106       
+
+Master Dataset: 16174 total rows
+Unique colleges (all years): 467
+Unique branches (all years): 116
+
+--------------------------------------------------------------------------------
+DUPLICATES SUMMARY
+--------------------------------------------------------------------------------
+2021: Exact duplicates: 0, Logical duplicates: 0
+2022: Exact duplicates: 0, Logical duplicates: 0
+2023: Exact duplicates: 0, Logical duplicates: 0
+2024: Exact duplicates: 0, Logical duplicates: 0
+2025: Exact duplicates: 0, Logical duplicates: 0
+
+--------------------------------------------------------------------------------
+MISSING VALUES ANALYSIS
+--------------------------------------------------------------------------------
+
+Column               2021     2022     2023     2024     2025    
+--------------------------------------------------------------------------------
+oc                   260      339      285      286      155     
+bc                   1083     1127     1141     1194     813     
+bcm                  1520     1713     1759     1867     1448    
+mbc                  1549     1187     1178     1207     829     
+sc                   1208     1326     1384     1410     962     
+sca                  2035     2279     2394     2403     2123    
+st                   2581     2837     3029     3087     2959    
+
+--------------------------------------------------------------------------------
+CUTOFF VALUE STATISTICS (All Valid Values)
+--------------------------------------------------------------------------------
+
+OC:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     2570     78.00      199.00     154.82    
+  2022     2750     77.86      200.00     127.73    
+  2023     3039     77.50      200.00     131.28    
+  2024     3188     77.50      200.00     131.76    
+  2025     3302     79.50      200.00     141.15    
+
+BC:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     1747     80.00      198.12     154.71    
+  2022     1962     78.00      200.00     124.30    
+  2023     2183     78.50      200.00     127.70    
+  2024     2280     80.00      199.50     128.28    
+  2025     2644     78.14      200.00     133.24    
+
+BCM:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     1310     78.50      197.02     161.71    
+  2022     1376     77.50      199.00     135.68    
+  2023     1565     80.00      199.50     138.10    
+  2024     1607     80.00      198.50     139.65    
+  2025     2009     80.00      199.50     143.94    
+
+MBC:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     1281     80.00      198.62     164.97    
+  2022     1902     78.00      199.33     121.62    
+  2023     2146     80.00      199.50     125.70    
+  2024     2267     77.50      199.50     126.73    
+  2025     2628     79.00      200.00     133.04    
+
+SC:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     1622     77.50      196.50     142.95    
+  2022     1763     78.00      197.50     108.64    
+  2023     1940     80.00      198.50     114.52    
+  2024     2064     79.00      197.50     114.88    
+  2025     2495     78.00      198.50     120.35    
+
+SCA:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     795      80.50      193.94     152.38    
+  2022     810      80.00      197.50     118.06    
+  2023     930      80.00      190.00     123.56    
+  2024     1071     80.00      196.00     123.20    
+  2025     1334     77.50      198.67     128.08    
+
+ST:
+  Year     Valid    Min        Max        Mean      
+  --------------------------------------------------
+  2021     249      87.50      192.50     153.35    
+  2022     252      80.00      193.72     126.01    
+  2023     295      78.00      192.00     128.36    
+  2024     387      80.00      194.00     130.61    
+  2025     498      81.00      197.00     136.67    
+
+--------------------------------------------------------------------------------
+DATA QUALITY CHECKS
+--------------------------------------------------------------------------------
+Negative Cutoff Values: ✓ None found (Good!)
+Values > 200: ✓ None found (Good!)
+Empty strings in text columns: ✓ None found (Good!)
+
+--------------------------------------------------------------------------------
+SCHEMA CONSISTENCY
+--------------------------------------------------------------------------------
+✓ All years have IDENTICAL schemas
+✓ Column count: 21
+✓ Column order: year, college_code, college_name, district, college_type, branch_code, branch_name, oc... (showing first 8)
+
+--------------------------------------------------------------------------------
+SAMPLE CLEANED RECORDS (First record of each year)
+--------------------------------------------------------------------------------
+
+2021:
+  Year:          2021
+  College Code:  1
+  College Name:  University Departments of Anna University, Chennai - CEG Cam...
+  District:      CHENNAI
+  College Type:  CEG DEPTS
+  Branch Code:   BY
+  Branch Name:   BIO MEDICAL ENGINEERING (SS)...
+  OC Cutoff:     195.0
+
+2022:
+  Year:          2022
+  College Code:  1
+  College Name:  University Departments of Anna University, Chennai - CEG Cam...
+  District:      CHENNAI
+  College Type:  CEG DEPTS
+  Branch Code:   BY
+  Branch Name:   BIO MEDICAL ENGINEERING (SS)...
+  OC Cutoff:     196.0
+
+2023:
+  Year:          2023
+  College Code:  1
+  College Name:  University Departments of Anna University Chennai - CEG Camp...
+  District:      CHENNAI
+  College Type:  CEG DEPTS
+  Branch Code:   BY
+  Branch Name:   BIO MEDICAL ENGINEERING (SS)...
+  OC Cutoff:     195.0
+
+2024:
+  Year:          2024
+  College Code:  1
+  College Name:  University Departments of Anna University Chennai - CEG Camp...
+  District:      CHENNAI
+  College Type:  CEG DEPTS
+  Branch Code:   BY
+  Branch Name:   BIO MEDICAL ENGINEERING (SS)...
+  OC Cutoff:     195.0
+
+2025:
+  Year:          2025
+  College Code:  1
+  College Name:  University Departments of Anna University Chennai - CEG Camp...
+  District:      CHENNAI
+  College Type:  CEG DEPTS
+  Branch Code:   BY
+  Branch Name:   BIO MEDICAL ENGINEERING (SS)...
+  OC Cutoff:     195.5
+
+--------------------------------------------------------------------------------
+CLEANING OPERATIONS APPLIED
+--------------------------------------------------------------------------------
+
+✓ Added 'year' column (integer) to each dataset
+✓ Standardized college_name formatting (removed quotes, normalized spaces)
+✓ Trimmed whitespace from all text columns
+✓ Ensured college_code is integer type
+✓ Ensured branch_code is properly formatted string
+✓ Verified all cutoff values are float (NaN for missing)
+✓ Verified all partial columns are integers (0 or 1)
+✓ Reordered columns consistently: year, college_code, college_name, ...
+✓ Sorted each dataset by: college_code, branch_code
+✓ Verified no exact duplicates
+✓ Verified no logical duplicates (college+branch unique within year)
+✓ Preserved all missing values as NaN (NOT replaced with 0)
+✓ Preserved all colleges and branches (no artificial removal)
+✓ Preserved all low cutoff values (all 77+ are valid)
+
+NOTE: Missing cutoff values are INTENTIONAL
+- Represent courses not offered in that category
+- Should be analyzed as "not applicable" not as "zero"
+
+
+--------------------------------------------------------------------------------
+OUTPUT FILES CREATED
+--------------------------------------------------------------------------------
+✓ cleaned_cutoff_2021.csv (2830 rows)
+✓ cleaned_cutoff_2022.csv (3089 rows)
+✓ cleaned_cutoff_2023.csv (3324 rows)
+✓ cleaned_cutoff_2024.csv (3474 rows)
+✓ cleaned_cutoff_2025.csv (3457 rows)
+✓ tnea_cutoff_master.csv (16174 rows)
+
+--------------------------------------------------------------------------------
+RECOMMENDATIONS FOR NEXT STEPS
+--------------------------------------------------------------------------------
+
+✓ CUTOFF DATA CLEANING COMPLETE
+
+Next Phase: Feature Engineering (when starting ML)
+- Do NOT scale/normalize numerical features yet
+- Do NOT encode categorical features yet
+- Wait until ML model training phase
+- Keep cleaned data in original scale
+
+Data is ready for:
+1. Exploratory Data Analysis (EDA)
+2. Understanding cutoff trends over years
+3. Visualizing cutoff distributions by category
+4. Preparing for Gemini/Antigravity ML training
+
+DO NOT perform:
+- Feature scaling (MinMax, StandardScaler, etc.) yet
+- Categorical encoding (OneHot, Label, etc.) yet
+- Polynomial features, interaction terms, etc. yet
+- Train/test splitting yet
+
+The cleaned master dataset is production-ready for analysis!
+
+
+================================================================================
+END OF VALIDATION REPORT
+================================================================================

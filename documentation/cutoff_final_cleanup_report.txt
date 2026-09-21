@@ -1,0 +1,167 @@
+================================================================================
+TNEA CUTOFF FINAL CLEANUP REPORT
+================================================================================
+Generated: 2026-08-17 14:37:55
+
+1. ORIGINAL DATASET
+--------------------------------------------------------------------------------
+Rows: 16,174
+Columns: 21
+
+2. FINAL DATASET
+--------------------------------------------------------------------------------
+Rows: 16,174
+Columns: 21
+
+3. BRANCH NAME STANDARDIZATIONS
+--------------------------------------------------------------------------------
+Mappings applied: 15
+Records affected: 8424
+
+  ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
+  → Artificial Intelligence and Data Science (484 records)
+  AGRICULTURE ENGINEERING
+  → Agricultural Engineering (45 records)
+  COMPUTER SCIENCE AND ENGINEERING (ARTIFICIAL INTEL
+  → Computer Science and Engineering (AI and Machine L (85 records)
+  COMPUTER SCIENCE AND ENGINEERING (AI AND MACHINE L
+  → Computer Science and Engineering (AI and Machine L (242 records)
+  CIVIL ENGINEERING
+  → Civil Engineering (1510 records)
+  COMPUTER SCIENCE AND ENGINEERING
+  → Computer Science and Engineering (2130 records)
+  Electronics and Communication ( Advanced Communica
+  → Electronics and Communication (Advanced Communicat (3 records)
+  Electronics and Communication (Advanced Communicat
+  → Electronics and Communication (Advanced Communicat (12 records)
+  ELECTRICAL AND ELECTRONICS ENGINEERING
+  → Electrical and Electronics Engineering (1856 records)
+  Electronics Engineering (VLSI design and Technolog
+  → Electronics Engineering (VLSI Design and Technolog (7 records)
+  Electronics Engineering (VLSI Design and Technolog
+  → Electronics Engineering (VLSI Design and Technolog (51 records)
+  MECHANICAL ENGINEERING
+  → Mechanical Engineering (1994 records)
+  PRINTING TECHNOLOGY
+  → Printing and Packing Technology (1 records)
+  PRINTING & PACKING TECHNOLOGY
+  → Printing and Packing Technology (2 records)
+  PRINTING AND PACKING TECHNOLOGY
+  → Printing and Packing Technology (2 records)
+
+4. DISTRICT STANDARDIZATIONS
+--------------------------------------------------------------------------------
+Mappings applied: 1
+Records affected: 90
+  TRICHIRAPPALLI → TIRUCHIRAPALLI (90 records)
+
+5. COLLEGE NAME STANDARDIZATIONS
+--------------------------------------------------------------------------------
+  Issue: college_code_1511_multiple_names
+  Details: Found 5 address variations for same college, all preserved
+  Records affected: 5
+
+6. COLLEGE CODE 1511 INVESTIGATION
+--------------------------------------------------------------------------------
+Status: Record found with multiple address variations in 2024
+Action: PRESERVED - Differences appear to be legitimate address/PIN variations
+Note: All 5 records kept unchanged as they represent the same college's different PIN codes
+
+7. BC CUTOFF + BC_PARTIAL INVESTIGATION
+--------------------------------------------------------------------------------
+Records found: 1
+
+Anomalies (BC cutoff missing but bc_partial=1):
+  Year: 2023
+  College: Sri Venkateswara College of Engineering (Autonomous) Post Ba
+  Branch: MARINE ENGINEERING
+  Status: PRESERVED - Likely source data inconsistency
+
+No correction applied - missing cutoff values preserved
+(Correcting data with uncertain values is worse than preserving anomaly)
+
+8. PARTIAL COLUMN VALIDATION
+--------------------------------------------------------------------------------
+oc_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+bc_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+bcm_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+mbc_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+sc_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+sca_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+st_partial:
+  Unique values: [np.int64(0), np.int64(1)]
+  Invalid values: 0
+
+9. MISSING CUTOFF VALUES
+--------------------------------------------------------------------------------
+oc:  1,325 (  8.2%) - PRESERVED AS NaN
+bc:  5,358 ( 33.1%) - PRESERVED AS NaN
+bcm:  8,307 ( 51.4%) - PRESERVED AS NaN
+mbc:  5,950 ( 36.8%) - PRESERVED AS NaN
+sc:  6,290 ( 38.9%) - PRESERVED AS NaN
+sca: 11,234 ( 69.5%) - PRESERVED AS NaN
+st: 14,493 ( 89.6%) - PRESERVED AS NaN
+
+10. DUPLICATE CHECK
+--------------------------------------------------------------------------------
+Exact duplicates after cleanup: 0
+Logical duplicates after cleanup: 0
+
+11. NUMERIC VALIDATION
+--------------------------------------------------------------------------------
+oc: negative=0, >200=0
+bc: negative=0, >200=0
+bcm: negative=0, >200=0
+mbc: negative=0, >200=0
+sc: negative=0, >200=0
+sca: negative=0, >200=0
+st: negative=0, >200=0
+
+12. YEAR VALIDATION
+--------------------------------------------------------------------------------
+Years found: [np.int64(2021), np.int64(2022), np.int64(2023), np.int64(2024), np.int64(2025)]
+Expected: [2021, 2022, 2023, 2024, 2025]
+Status: ✓ VALID
+
+13. REQUIRED IDENTIFIER VALIDATION
+--------------------------------------------------------------------------------
+Missing college_code: 0
+Missing branch_code: 0
+Missing college_name: 0
+Missing branch_name: 0
+
+14. ROW COUNT SUMMARY
+--------------------------------------------------------------------------------
+Before cleanup: 16,174
+After cleanup:  16,174
+Rows removed:   0
+Data loss:      0.00%
+
+15. FINAL STATUS
+--------------------------------------------------------------------------------
+STATUS: ✓ READY FOR NEXT STAGE
+
+The cleaned dataset passes all validation checks:
+  ✓ No duplicates
+  ✓ Valid partial columns
+  ✓ Valid numeric cutoff values
+  ✓ All required identifiers present
+  ✓ Branch names standardized
+  ✓ District names standardized
+  ✓ High data integrity
+
+================================================================================
+END OF CLEANUP REPORT
+================================================================================

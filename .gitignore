@@ -1,0 +1,24 @@
+# Virtual environments
+.venv/
+.venv-1/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Secrets and environment files
+.env
+.env.*
+
+# IDE settings
+.vscode/
+
+# Temporary files
+*.log
+*.tmp
+
+# Local backups
+backups/
+
+# Optional: exclude large raw datasets if needed
+# data/raw/

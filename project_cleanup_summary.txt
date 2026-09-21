@@ -1,0 +1,100 @@
+COLLEGECONNECT TNEA PROJECT CLEANUP SUMMARY
+============================================
+
+Original project location
+-------------------------
+C:\Users\Prakash\Desktop\TNEA_FINAL
+
+Resulting structure
+-------------------
+- app/                 Streamlit application
+- data/raw/            original cutoff and rank inputs
+- data/cleaned/        cleaned and final master datasets
+- data/integrated/     application input dataset
+- scripts/collection/  data collection utilities
+- scripts/integration/ cleaning and integration utilities
+- scripts/audits/      inspection and audit utilities
+- scripts/comparison/  historical comparison utilities
+- scripts/ml/          ML-feasibility utility
+- backups/             application, dataset, and report archives
+- documentation/       process documentation and inventories
+- tests/               verification and API utility scripts
+- exports/             generated export destination
+
+Files moved
+-----------
+- The Streamlit application was moved to app/.
+- Raw, cleaned, final, and integrated datasets were placed under data/.
+- Collection, integration, audit, comparison, feasibility, and test utilities
+  were placed in the matching scripts/ or tests/ folders.
+- Existing application and dataset backups were consolidated under backups/.
+- Process documentation and the pre-cleanup inventory were preserved under
+  documentation/.
+- Only required filesystem path references were updated. No comparison,
+  calculation, warning, dataset, or application behavior was changed.
+
+Reports retained for review
+---------------------------
+Fifteen historical analytical reports were moved to
+backups/removed_reports_pending_review/. They were not deleted because the
+requested CollegeConnect_Project_Process.txt was not present to establish that
+their information was redundant. Existing non-historical process and cleanup
+documentation remains under documentation/.
+
+Files preserved
+---------------
+- The current application, integrated dataset, final cutoff and rank masters,
+  raw and cleaned cutoff/rank datasets, all useful Python utilities, tests, and
+  existing backups are preserved.
+- README.md and requirements.txt were added at the project root.
+- documentation/inventories/project_file_inventory.txt was preserved as the
+  pre-cleanup inventory snapshot.
+
+Data integrity
+--------------
+Integrated dataset SHA-256 before:
+91B5E042C29FA5DACFC63A4176D251054340FBE81E771A7BDBAEA683FBEB886F
+Integrated dataset SHA-256 after:
+91B5E042C29FA5DACFC63A4176D251054340FBE81E771A7BDBAEA683FBEB886F
+Dataset rows before/after: 16,174
+Dataset columns before/after: 35
+Dataset contents changed: NO
+
+Application integrity
+---------------------
+Application SHA-256 before:
+93F1C37F88ACF039C34BB4356CA77CFF3C24D733508C79B7ACD19C105A8DD6D7
+Application SHA-256 after:
+CC8C08BC089C1569EA7BFA04EF1AAB8FC973A536E575A0E68331C0B285399FB8
+The application hash changed only because its input path was updated to the
+new integrated-data location. Its comparison logic and user-facing behavior
+were not changed.
+
+Application verification
+------------------------
+- Python syntax validation passed for all 22 application, script, and test
+  Python files.
+- The app started with: python -m streamlit run app\stage11_app.py
+- Local startup smoke test returned HTTP 200.
+- Focused cutoff and rank searches passed.
+- All-district/all-course and college-filter searches passed.
+- Historical match-rate fields, missing-value notes, category mappings, and
+  in-memory CSV export generation were exercised successfully.
+
+Unresolved items
+----------------
+- CollegeConnect_Project_Process.txt was not found. The existing
+  documentation/PROJECT_COMPLETION_SUMMARY.txt was preserved as the nearest
+  available project-process summary.
+- The current virtual environment has pandas, NumPy, Streamlit, and requests,
+  but not pycryptodome. The latter is listed in requirements.txt because the
+  optional collection utilities import Crypto; no package was installed.
+- Two virtual environments remain. Confirm the intended one before any future
+  consolidation; neither was changed.
+
+Safety confirmation
+-------------------
+No dataset values, rows, columns, comparison rules, or ML behavior were
+changed. No ML model was trained. No important source file was deleted.
+Historical reports were moved to a review archive rather than permanently
+removed.

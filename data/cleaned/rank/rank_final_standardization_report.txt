@@ -1,0 +1,105 @@
+==================================================
+TNEA RANK FINAL STANDARDIZATION REPORT
+==================================================
+
+1. DATASET SUMMARY
+Rows before: 16174
+Rows after: 16174
+Columns before: 21
+Columns after: 21
+
+2. YEAR DISTRIBUTION
+2021: 2830
+2022: 3089
+2023: 3324
+2024: 3474
+2025: 3457
+
+3. COLUMN DATATYPES
+college_code: int64
+college_name: str
+district: str
+college_type: str
+branch_code: str
+branch_name: str
+oc: float64
+bc: float64
+bcm: float64
+mbc: float64
+sc: float64
+sca: float64
+st: float64
+oc_partial: int64
+bc_partial: int64
+bcm_partial: int64
+mbc_partial: int64
+sc_partial: int64
+sca_partial: int64
+st_partial: int64
+year: int64
+
+4. COLLEGE NAME STANDARDIZATION
+Number of college codes inspected: 467
+Number standardized: 0
+Number left unchanged: 467
+Number requiring manual review: 443
+
+5. BRANCH NAME STANDARDIZATION
+Number standardized: 1759
+Number left unchanged: 1
+Number requiring manual review: 1
+
+6. DISTRICT STANDARDIZATION
+Number standardized: 0
+Number requiring review: 0
+
+7. COLLEGE TYPE STANDARDIZATION
+Number standardized: 0
+Number requiring review: 0
+
+8. RANK VALIDATION
+oc: missing=1325, invalid=0, negative=0, zero=0, non-numeric=0
+bc: missing=5360, invalid=0, negative=0, zero=0, non-numeric=0
+bcm: missing=8312, invalid=0, negative=0, zero=0, non-numeric=0
+mbc: missing=5953, invalid=0, negative=0, zero=0, non-numeric=0
+sc: missing=6292, invalid=0, negative=0, zero=0, non-numeric=0
+sca: missing=11235, invalid=0, negative=0, zero=0, non-numeric=0
+st: missing=14497, invalid=0, negative=0, zero=0, non-numeric=0
+
+9. PARTIAL RANK VALIDATION
+oc_partial: unique_values=[0, 1], invalid_values=0
+bc_partial: unique_values=[0, 1], invalid_values=0
+bcm_partial: unique_values=[0, 1], invalid_values=0
+mbc_partial: unique_values=[0, 1], invalid_values=0
+sc_partial: unique_values=[0, 1], invalid_values=0
+sca_partial: unique_values=[0, 1], invalid_values=0
+st_partial: unique_values=[0, 1], invalid_values=0
+
+10. DUPLICATES
+Exact duplicates before: 0
+Exact duplicates after: 0
+Logical duplicates before: 0
+Logical duplicates after: 0
+
+11. ROW CHANGES
+Rows removed: 0
+Rows added: 0
+
+12. MANUAL REVIEW ITEMS
+college_code=1; sample_names=['University Departments of Anna University, Chennai - CEG Campus, Sardar Patel Road, Guindy, Chennai 600 025', 'University Departments of Anna University Chennai - CEG Campus Sardar Patel Road Guindy Chennai 600 025']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=2; sample_names=['University Departments of Anna University, Chennai - ACT Campus, Sardar Patel Road, Guindy, Chennai 600 025', 'University Departments of Anna University Chennai - ACT Campus Sardar Patel Road Guindy Chennai 600 025']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=3; sample_names=['School of Architecture and Planning, Anna University,Chennai 600025', 'School of Architecture and Planning Anna University Chennai 600025']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=4; sample_names=['University Departments of Anna University, Chennai - MIT Campus, Chrompet, Tambaram Taluk, Chengalpattu District 600 044', 'University Departments of Anna University Chennai - MIT Campus Chrompet Tambaram Taluk Chengalpattu District 600 044']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=5; sample_names=['Annamalai University Faculty of Engineering and Technology,Annamalai nagar,Cuddalore', 'Annamalai University Faculty of Engineering and Technology Annamalai nagar Cuddalore']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=1013; sample_names=['University College of Engineering, Villupuram, Kakuppam, Villupuram District 605103', 'University College of Engineering Villupuram Kakuppam Villupuram District 605103']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=1014; sample_names=['University College of Engineering, Tindivanam, Melpakkam, Tindivanam, Villupuram District 604001', 'University College of Engineering Tindivanam Melpakkam Tindivanam Villupuram District 604001']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=1015; sample_names=['University College of Engineering, Arni, Arni to Devikapuram Road, Thatchur, Arni, Thiruvannamalai District 632326', 'University College of Engineering Arni Arni to Devikapuram Road Thatchur Arni Thiruvannamalai District 632326']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=1026; sample_names=['University College of Engineering, Kancheepuram, Ponnerikarai Campus, NH4, Chennai-Bangalore Highway, Karaipettai Village & Post, Kancheepuram District 631552', 'University College of Engineering Kancheepuram Ponnerikarai Campus NH4 Chennai-Bangalore Highway Karaipettai Village & Post Kancheepuram District 631552']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+college_code=1101; sample_names=['Aalim Muhammed Salegh College of Engineering, Muthapudupet, Avadi IAF, Chennai 600055', 'Aalim Muhammed Salegh College of Engineering Muthapudupet Avadi IAF Chennai 600055', 'Aalim Muhammed Salegh College of Engineering, Nizara Educational Campus Muthapudupet, Avadi - IAF, Chennai-600055.']; reason=multiple legitimate presentation/address variants; action=kept unchanged
+branch_code=MD; names=['MEDICAL ELECTRONICS ENGINEERING', 'MEDICAL ELECTRONICS']; reason=multiple historical names under same code; action=kept unchanged
+Total unresolved manual-review cases: 444
+
+13. FINAL STATUS
+READY FOR ML DATA INTEGRATION
+
+==================================================

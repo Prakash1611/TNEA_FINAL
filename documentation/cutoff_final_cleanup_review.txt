@@ -1,0 +1,27 @@
+================================================================================
+TNEA CUTOFF FINAL CLEANUP - REVIEW FILE
+================================================================================
+Generated: 2026-08-17 14:37:55
+
+SUSPICIOUS ISSUES FOUND AND PRESERVED
+
+
+Issue #1
+--------------------------------------------------------------------------------
+Type: cutoff_partial_mismatch
+Category: BC
+Year: 2023
+College Code: 1219
+College Name: Sri Venkateswara College of Engineering (Autonomous) Post Ba
+Branch Code: MR
+Branch Name: MARINE ENGINEERING
+District: KANCHEEPURAM
+Cutoff Value: NaN
+Partial Flag: 1
+Status: PRESERVED - likely source data inconsistency
+Confidence: HIGH
+
+
+================================================================================
+NO OTHER ISSUES REQUIRING MANUAL REVIEW
+================================================================================

@@ -1,0 +1,351 @@
+TNEA STAGE 2 - CUTOFF + RANK DATA INTEGRATION AUDIT
+====================================================
+
+Audit scope
+-----------
+This is a read-only integration audit. The source CSV files were not modified,
+merged, renamed, or transformed. No feature engineering, model training, or
+prediction was performed.
+
+1. DATASET SUMMARIES
+--------------------
+
+Cutoff dataset
+Path: c:\Users\Prakash\Desktop\TNEA_FINAL\tnea_cutoff_master_final.csv
+Rows: 16,174
+Columns: 21
+Years: 2021, 2022, 2023, 2024, 2025
+Unique college codes: 467
+Unique branch codes: 116
+Exact duplicate rows: 0
+Duplicate (year, college_code, branch_code) keys: 0
+
+Rank dataset
+Path: c:\Users\Prakash\Desktop\TNEA_FINAL\cleaned_rank_data\tnea_rank_master_final.csv
+Rows: 16,174
+Columns: 21
+Years: 2021, 2022, 2023, 2024, 2025
+Unique college codes: 467
+Unique branch codes: 116
+Exact duplicate rows: 0
+Duplicate (year, college_code, branch_code) keys: 0
+
+Both files have all required identifiers populated: year, college_code,
+college_name, branch_code, and branch_name have zero missing values in both
+files.
+
+2. SCHEMA COMPARISON
+--------------------
+
+The files contain the same 21 column names. There are no cutoff-only columns
+and no rank-only columns.
+
+Common columns:
+year, college_code, college_name, district, college_type, branch_code,
+branch_name, oc, bc, bcm, mbc, sc, sca, st, oc_partial, bc_partial,
+bcm_partial, mbc_partial, sc_partial, sca_partial, st_partial
+
+Column order differs:
+- Cutoff file places year first.
+- Rank file places year last.
+This is a presentation difference only; data types are identical for every
+common column.
+
+Data types in both files:
+- year: int64
+- college_code: int64
+- college_name, district, college_type, branch_code, branch_name: string/object
+- oc, bc, bcm, mbc, sc, sca, st: float64
+- oc_partial, bc_partial, bcm_partial, mbc_partial, sc_partial, sca_partial,
+  st_partial: int64
+
+No category, quota, community, or caste column exists as a separate field.
+The category-like fields are represented as wide columns: OC, BC, BCM, MBC,
+SC, SCA, and ST, with one value per category column.
+
+3. COMMON AND UNIQUE YEARS
+--------------------------
+
+Years common to both files: 2021, 2022, 2023, 2024, 2025
+Years only in cutoff: none
+Years only in rank: none
+Year format: consistent int64 in both files
+
+Record counts by year:
+Year   Cutoff   Rank   Common candidate keys
+2021    2,830   2,830       2,830
+2022    3,089   3,089       3,089
+2023    3,324   3,324       3,324
+2024    3,474   3,474       3,474
+2025    3,457   3,457       3,457
+Total  16,174  16,174      16,174
+
+4. COLLEGE CODE MATCHING
+------------------------
+
+Cutoff unique college codes: 467
+Rank unique college codes: 467
+Codes common to both: 467
+Codes only in cutoff: 0
+Codes only in rank: 0
+
+Formatting checks:
+- college_code is int64 in both files.
+- No leading or trailing spaces were detected.
+- No leading-zero code values were detected.
+- No numeric-versus-string difference exists in the loaded data.
+
+College names are not required as a join key. They match across the two files
+for every matched candidate key. However, each file contains one year/college
+group with multiple historical name strings: year 2024, college code 1511,
+with five name variants. These variants were preserved and demonstrate why
+college_name should not replace college_code in the join key.
+
+5. BRANCH CODE MATCHING
+-----------------------
+
+Cutoff unique branch codes: 116
+Rank unique branch codes: 116
+Codes common to both: 116
+Codes only in cutoff: 0
+Codes only in rank: 0
+
+Formatting checks:
+- branch_code is string/object in both files.
+- No leading or trailing spaces were detected.
+- No leading-zero branch codes were detected.
+
+All branch codes are available in both datasets. Branch names agree on the
+matched records except for one formatting pair:
+- branch_code AG
+- cutoff: AGRICULTURAL ENGINEERING
+- rank: Agricultural Engineering
+- affected matched rows: 249
+
+The branch code is the safer alignment field. Similar-looking names should not
+be used as the primary key.
+
+6. CANDIDATE JOIN KEYS AND MATCHING RESULTS
+--------------------------------------------
+
+Candidate key tested:
+(year, college_code, branch_code)
+
+Results:
+- Candidate key groups in cutoff: 16,174
+- Candidate key groups in rank: 16,174
+- Common candidate-key groups: 16,174
+- Duplicate candidate-key groups in cutoff: 0
+- Duplicate candidate-key groups in rank: 0
+- Candidate-key groups duplicated on both sides: 0
+- Cutoff rows with a rank key match: 16,174
+- Rank rows with a cutoff key match: 16,174
+- Unmatched cutoff rows: 0
+- Unmatched rank rows: 0
+- Conflicting college names on matched keys: 0
+- Conflicting district values on matched keys: 0
+- Conflicting college_type values on matched keys: 0
+- Conflicting branch names on matched keys: 249 rows, all the AG casing pair
+- Conflicting year values: 0, because year is part of the candidate key
+
+The tested key is therefore one-to-one for the current files. The less specific
+keys are not valid row keys:
+- (year, college_code) has 2,183 groups for 16,174 rows.
+- (year, branch_code) has 510 groups for 16,174 rows.
+- (college_code, branch_code) has 3,906 groups for 16,174 rows.
+These repeated groups are expected because a college has multiple branches and
+records repeat across years. They must not be used alone for integration.
+
+7. DATASET GRAIN
+----------------
+
+Both datasets have the same observed grain:
+one row per year + college_code + branch_code.
+
+The category fields are columns, not rows. Therefore each row contains the
+seven category-specific values for one college/branch/year observation.
+
+For the current files, the relationship on
+(year, college_code, branch_code) is one-to-one to one-to-one. No one-to-many
+or many-to-many candidate relationship was found.
+
+8. CATEGORY COMPATIBILITY
+-------------------------
+
+Category columns in both files:
+oc, bc, bcm, mbc, sc, sca, st
+
+Partial indicators in both files:
+oc_partial, bc_partial, bcm_partial, mbc_partial,
+sc_partial, sca_partial, st_partial
+
+All partial columns contain only 0 and 1 in both files. The partial indicators
+match exactly on every candidate key; there were zero partial-flag mismatches.
+
+The category column names are aligned, but their numeric meanings are not the
+same:
+- cutoff file: category cutoff marks
+- rank file: category rank values
+
+Evidence:
+- Every category with a non-missing value in both files had different numeric
+  values on every compared matched row.
+- OC: 14,849 both-present; 14,849 different numeric values.
+- BC: 10,814 both-present; 10,814 different numeric values.
+- BCM: 7,862 both-present; 7,862 different numeric values.
+- MBC: 10,221 both-present; 10,221 different numeric values.
+- SC: 9,882 both-present; 9,882 different numeric values.
+- SCA: 4,939 both-present; 4,939 different numeric values.
+- ST: 1,677 both-present; 1,677 different numeric values.
+
+Missingness is mostly aligned but not identical. There are 17 category
+presence differences in total: cutoff has a value while rank is missing for
+2 BC, 5 BCM, 3 MBC, 2 SC, 1 SCA, and 4 ST cells. There are no cells where
+rank is present and cutoff is missing.
+
+Conclusion: category names can be aligned by column name, but values must be
+kept as separate fields with explicit source prefixes such as cutoff_oc and
+rank_oc. They must never be coalesced into one category value.
+
+9. DUPLICATE ANALYSIS
+---------------------
+
+Exact duplicate rows:
+- Cutoff: 0
+- Rank: 0
+
+Duplicate candidate keys using (year, college_code, branch_code):
+- Cutoff: 0
+- Rank: 0
+
+The files are structurally ready for a validated one-to-one key join. No
+records should be dropped based on duplicate logic because none are present at
+the proposed key grain.
+
+10. UNMATCHED RECORDS
+---------------------
+
+All five years have complete key alignment.
+- Unmatched cutoff records: 0
+- Unmatched rank records: 0
+- Cutoff-only college codes: 0
+- Rank-only college codes: 0
+- Cutoff-only branch codes: 0
+- Rank-only branch codes: 0
+
+11. INTEGRATION RISKS AND EVIDENCE
+-----------------------------------
+
+Risk 1 - Same column names, different measures
+Evidence: all non-missing matched category values differ between the two
+files. The fields are cutoff marks versus rank values.
+Why it matters: a blind merge or overwrite could destroy one measure or make
+rank values appear to be cutoff values.
+Safe handling: merge with explicit suffixes or rename only in the integrated
+output, for example cutoff_oc and rank_oc. Do not modify source files.
+
+Risk 2 - Branch-name formatting mismatch
+Evidence: 249 matched rows differ only for AG: uppercase cutoff name versus
+title-case rank name.
+Why it matters: joining on branch_name would create false unmatched rows.
+Safe handling: use branch_code as the key; optionally normalize display names
+in a derived integrated output after retaining original source names.
+
+Risk 3 - Historical college-name variants
+Evidence: year 2024, college code 1511 has five name variants in each file.
+Why it matters: joining on college_name can split one college into multiple
+values or create false mismatches.
+Safe handling: use college_code, retain source names, and document any future
+college-code changes with an explicit mapping table.
+
+Risk 4 - Incomplete category values
+Evidence: both files contain category missing values; rank and cutoff
+missingness differs by 17 category cells.
+Why it matters: missing is not equivalent to zero, and a missing value must not
+be imputed from the other dataset without source evidence.
+Safe handling: preserve missing values independently for cutoff and rank;
+retain partial indicators; validate any later imputation separately.
+
+Risk 5 - Less-specific keys are repeated
+Evidence: year + college_code has 2,183 groups for 16,174 rows, and year +
+branch_code has 510 groups for 16,174 rows.
+Why it matters: either key alone would create one-to-many or many-to-many
+matches.
+Safe handling: include year, college_code, and branch_code together and assert
+uniqueness on both sides before joining.
+
+Risk 6 - Column order differs
+Evidence: year is first in cutoff and last in rank.
+Why it matters: positional assumptions could misread columns.
+Safe handling: join and validate by explicit column names, never by position.
+
+12. PROPOSED INTEGRATION PLAN
+-----------------------------
+
+Candidate join key:
+(year, college_code, branch_code)
+
+Expected relationship:
+One cutoff record to one rank record for the current five-year files.
+
+Direct merge safety:
+- Key-level merge: structurally safe after uniqueness assertions; all 16,174
+  keys match one-to-one.
+- Blind direct merge: not safe, because the files contain overlapping column
+  names with different semantics and one known branch-name casing mismatch.
+
+Normalization requirement:
+- No key normalization is currently required: year, college_code, and
+  branch_code already have matching types and value sets.
+- Do not normalize source files as part of integration.
+- Any display-name normalization should occur only in a derived output and
+  should preserve original names.
+
+Mapping-table requirement:
+- No college-code or branch-code mapping table is required for these current
+  files because all code sets match exactly.
+- A future historical mapping table is recommended if later source years show
+  college-code changes or branch-code remapping.
+
+Recommended integrated layout:
+Keep the current wide row grain and add source-specific names for overlapping
+measures, for example cutoff_oc/rank_oc through cutoff_st/rank_st. Retain the
+partial indicators with clear source semantics, or retain one shared indicator
+only after verifying the exact business meaning. Do not stack cutoff and rank
+into a single category value. A long category table may be useful later for a
+separate analytical view, but it is not necessary for the initial safe join.
+
+13. QUESTIONS REQUIRING MANUAL REVIEW
+-------------------------------------
+
+1. Confirm the business definition of each category column in the rank file,
+   especially whether values are final ranks, closing ranks, or another rank
+   statistic.
+2. Confirm whether shared partial indicators have exactly the same meaning in
+   cutoff and rank files. They match numerically, but numeric agreement alone
+   does not prove semantic equivalence.
+3. Confirm whether the 2024 college code 1511 name variants are expected
+   historical/address presentation variants.
+4. Confirm whether AG display-name casing should be standardized in future
+   derived outputs, while retaining branch_code as the identifier.
+
+14. FINAL AUDIT STATUS
+----------------------
+
+Both files located: YES
+Rows: cutoff 16,174; rank 16,174
+Columns: cutoff 21; rank 21
+Common years: 2021-2025
+Candidate join key: year + college_code + branch_code
+Unmatched records: 0 cutoff; 0 rank
+Duplicate candidate keys: 0 cutoff; 0 rank
+Category compatibility: column names and partial flags align, but numeric
+values represent different measures and must remain separate
+Direct blind merge safe: NO
+Validated key-level integration: YES, subject to explicit source prefixes,
+uniqueness assertions, and preservation of missing values
+Recommended next step: implement a separate, validated one-to-one integration
+script using the candidate key and source-specific output column names. Do not
+modify these source CSVs.
+
+END OF AUDIT

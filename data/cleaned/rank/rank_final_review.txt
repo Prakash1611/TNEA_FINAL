@@ -1,0 +1,34 @@
+==================================================
+TNEA RANK FINAL REVIEW FILE
+==================================================
+
+Ambiguous college-name cases left unchanged:
+college_code=1; sample_names=['University Departments of Anna University, Chennai - CEG Campus, Sardar Patel Road, Guindy, Chennai 600 025', 'University Departments of Anna University Chennai - CEG Campus Sardar Patel Road Guindy Chennai 600 025']
+college_code=2; sample_names=['University Departments of Anna University, Chennai - ACT Campus, Sardar Patel Road, Guindy, Chennai 600 025', 'University Departments of Anna University Chennai - ACT Campus Sardar Patel Road Guindy Chennai 600 025']
+college_code=3; sample_names=['School of Architecture and Planning, Anna University,Chennai 600025', 'School of Architecture and Planning Anna University Chennai 600025']
+college_code=4; sample_names=['University Departments of Anna University, Chennai - MIT Campus, Chrompet, Tambaram Taluk, Chengalpattu District 600 044', 'University Departments of Anna University Chennai - MIT Campus Chrompet Tambaram Taluk Chengalpattu District 600 044']
+college_code=5; sample_names=['Annamalai University Faculty of Engineering and Technology,Annamalai nagar,Cuddalore', 'Annamalai University Faculty of Engineering and Technology Annamalai nagar Cuddalore']
+college_code=1013; sample_names=['University College of Engineering, Villupuram, Kakuppam, Villupuram District 605103', 'University College of Engineering Villupuram Kakuppam Villupuram District 605103']
+college_code=1014; sample_names=['University College of Engineering, Tindivanam, Melpakkam, Tindivanam, Villupuram District 604001', 'University College of Engineering Tindivanam Melpakkam Tindivanam Villupuram District 604001']
+college_code=1015; sample_names=['University College of Engineering, Arni, Arni to Devikapuram Road, Thatchur, Arni, Thiruvannamalai District 632326', 'University College of Engineering Arni Arni to Devikapuram Road Thatchur Arni Thiruvannamalai District 632326']
+college_code=1026; sample_names=['University College of Engineering, Kancheepuram, Ponnerikarai Campus, NH4, Chennai-Bangalore Highway, Karaipettai Village & Post, Kancheepuram District 631552', 'University College of Engineering Kancheepuram Ponnerikarai Campus NH4 Chennai-Bangalore Highway Karaipettai Village & Post Kancheepuram District 631552']
+college_code=1101; sample_names=['Aalim Muhammed Salegh College of Engineering, Muthapudupet, Avadi IAF, Chennai 600055', 'Aalim Muhammed Salegh College of Engineering Muthapudupet Avadi IAF Chennai 600055', 'Aalim Muhammed Salegh College of Engineering, Nizara Educational Campus Muthapudupet, Avadi - IAF, Chennai-600055.']
+college_code=1106; sample_names=['Jaya Engineering College, Thirunindravur, Chennai 602024', 'Jaya Engineering College Thirunindravur Chennai 602024', 'Jaya Engineering College, Prakash Nagar, Thiruninravur, Thiruvallur District, Chennai-602024.']
+college_code=1107; sample_names=['Jaya Institute of Technology, Kanchipadi Post, Thiruvallur-Tiruttani NH Road, Thiruvallur District 631204', 'Jaya Institute of Technology Kanchipadi Post Thiruvallur-Tiruttani NH Road Thiruvallur District 631204', 'Jaya Institute of Technology, Kanchipadi, Thiruvallur-Thiruthani NH Road, Thiruvallur Taluk & District-631204.']
+college_code=1110; sample_names=['Prathyusha Engineering college, Aranvoyalkuppam, Thiruvallur District 602025', 'Prathyusha Engineering college (Autonomous) Aranvoyalkuppam Thiruvallur District 602025', 'Prathyusha Engineering College (Autonomous), Poonamallee-Tiruvallur High Road, Aranvoyalkuppam, Tiruvallur-602025.']
+college_code=1112; sample_names=['R M D Engineering College (Autonomous), Kavaraipettai, Gummidipoondi, Thiruvallur District 601206', 'R M D Engineering College (Autonomous) Kavaraipettai Gummidipoondi Thiruvallur District 601206', 'R.M.D. Engineering College (Autonomous), R.S.M. Nagar, Gummidipoondi Taluk, Kavaraipettai, Thiruvallur-601206.']
+college_code=1113; sample_names=['R M K Engineering College (Autonomous), Kavaraipettai, Gummidipoondi, Thiruvallur District 601206', 'R M K Engineering College (Autonomous) Kavaraipettai Gummidipoondi Thiruvallur District 601206', 'R.M.K. Engineering College (Autonomous), R.S.M. Nagar, Kavaraipettai, Gummidipoondi Taluk, Thiruvallur-601206.']
+college_code=1114; sample_names=['S A Engineering College (Autonomous), Thiruverkadu, Chennai 600077', 'S A Engineering College (Autonomous) Thiruverkadu Chennai 600077', 'S.A. Engineering College (Autonomous), Poonamallee- Avadi Road, Thiruverkadu Post, Tiruvallur, Chennai-600077.']
+college_code=1115; sample_names=['Sri Ram Engineering College, Perumalpattu, Veppampattu (R S), Thiruvallur District 602 024', 'Sri Ram Engineering College Perumalpattu Veppampattu (R S) Thiruvallur District 602 024', 'SriRam Engineering College, Perumalpattu, Veppampattu R.S., Tiruvallur District, Chennai-602024.']
+college_code=1116; sample_names=['Sri Venkateswara College of Engineering and Technology, Thirupachur, Thiruvallur District 631203', 'Sri Venkateswara College of Engineering and Technology Thirupachur Thiruvallur District 631203', 'Sri Venkateswara College of Engineering and Technology, Thirupachur, Thiruvallur Taluk & District-631203.']
+college_code=1118; sample_names=['Vel Tech Multi Tech Dr. Rangarajan Dr. Sakunthala Engineering College (Autonomous), Avadi-Alamathi Road, Chennai 600 062', 'Vel Tech Multi Tech Dr. Rangarajan Dr. Sakunthala Engineering College (Autonomous) Avadi-Alamathi Road Chennai 600 062', 'Vel Tech Multi Tech Dr Rangarajan Dr Sakunthala Engineering College (Autonomous), 42, Veltech Road, Avadi, Morai, Thiruvallur-600062.']
+college_code=1120; sample_names=['Velammal Engineering College (Autonomous), Ambattur-Redhills Road, Chennai 600066', 'Velammal Engineering College (Autonomous) Ambattur-Redhills Road Chennai 600066', 'Velammal Engineering College (Autonomous), Velammal Nagar, Ambattur-Redhills Road, Surapet, Thiruvallur, Chennai-600066.']
+
+Ambiguous branch-name cases left unchanged:
+branch_code=MD; names=['MEDICAL ELECTRONICS ENGINEERING', 'MEDICAL ELECTRONICS']
+
+Notes:
+- Many college codes show multiple name strings due to formatting and address presentation differences; they were not merged without stronger evidence.
+- AG and CE branch names were standardized because the dataset confirmed the names are the same branch with formatting differences.
+- MD remains unresolved because the dataset has two separate titles for the same branch code and they are not safely interchangeable.
+==================================================

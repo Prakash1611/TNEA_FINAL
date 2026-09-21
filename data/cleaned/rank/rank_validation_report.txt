@@ -1,0 +1,106 @@
+============================================================
+TNEA RANK DATA VALIDATION REPORT
+============================================================
+
+1. RAW DATASET SUMMARY
+
+2021:
+Rows: 2830
+Columns: 20
+
+2022:
+Rows: 3089
+Columns: 20
+
+2023:
+Rows: 3324
+Columns: 20
+
+2024:
+Rows: 3474
+Columns: 20
+
+2025:
+Rows: 3457
+Columns: 20
+
+2. FINAL DATASET SUMMARY
+
+Rows: 16,174
+Columns: 21
+
+3. RANK SUMMARY
+
+2021 | Min: 29 | Max: 136972 | Mean: 82946 | Median: 88863 | Missing: 10243 | Unique: 9555
+2022 | Min: 22 | Max: 156271 | Mean: 101917 | Median: 115553 | Missing: 10814 | Unique: 10809
+2023 | Min: 32 | Max: 176744 | Mean: 115387 | Median: 129574 | Missing: 11172 | Unique: 12096
+2024 | Min: 44 | Max: 197601 | Mean: 128758 | Median: 146674 | Missing: 11456 | Unique: 12862
+2025 | Min: 28 | Max: 239299 | Mean: 152662 | Median: 169720 | Missing: 9289 | Unique: 14910
+
+4. MISSING VALUES
+
+oc: 1325 (8.19%)
+bc: 5360 (33.14%)
+bcm: 8312 (51.39%)
+mbc: 5953 (36.81%)
+sc: 6292 (38.90%)
+sca: 11235 (69.46%)
+st: 14497 (89.63%)
+
+5. DUPLICATES
+
+Exact duplicates: 0
+Logical duplicates: 0
+
+6. INVALID RANK VALUES
+
+Negative: 0
+Zero: 0
+Non-numeric: 0
+Missing: 52974
+
+7. IDENTIFIER VALIDATION
+
+Missing college_code: 0
+Missing branch_code: 0
+College-code/name inconsistencies: 443
+Branch-code/name inconsistencies: 3
+
+8. DISTRICT VALIDATION
+
+Issues found: 0
+
+9. CATEGORY VALIDATION
+
+Issues found: 0
+
+10. SCHEMA CONSISTENCY
+
+Differences between years: none after standardization; all yearly files use the same 21-column schema with year appended.
+
+11. RECORD COUNT
+
+2021: raw=2830 cleaned=2830
+2022: raw=3089 cleaned=3089
+2023: raw=3324 cleaned=3324
+2024: raw=3474 cleaned=3474
+2025: raw=3457 cleaned=3457
+
+12. SUSPICIOUS RECORDS
+
+Year: 2021 | Type: branch_name_variation | Details: Standardized branch-name formatting and capitalization variants | Count: 1253 | Confidence: HIGH
+Year: 2021 | Type: district_variation | Details: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI | Count: 18 | Confidence: HIGH
+Year: 2022 | Type: branch_name_variation | Details: Standardized branch-name formatting and capitalization variants | Count: 1450 | Confidence: HIGH
+Year: 2022 | Type: district_variation | Details: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI | Count: 26 | Confidence: HIGH
+Year: 2023 | Type: branch_name_variation | Details: Standardized branch-name formatting and capitalization variants | Count: 1571 | Confidence: HIGH
+Year: 2023 | Type: district_variation | Details: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI | Count: 27 | Confidence: HIGH
+Year: 2024 | Type: branch_name_variation | Details: Standardized branch-name formatting and capitalization variants | Count: 1301 | Confidence: HIGH
+Year: 2024 | Type: district_variation | Details: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI | Count: 14 | Confidence: HIGH
+Year: 2025 | Type: branch_name_variation | Details: Standardized branch-name formatting and capitalization variants | Count: 1276 | Confidence: HIGH
+Year: 2025 | Type: district_variation | Details: Standardized TRICHIRAPPALLI to TIRUCHIRAPALLI | Count: 5 | Confidence: HIGH
+
+13. FINAL STATUS
+
+READY FOR NEXT STAGE
+
+============================================================
